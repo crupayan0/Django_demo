@@ -7,3 +7,5 @@ class Song(models.Model):
     description = models.TextField()
     song_uploaded_on = models.DateTimeField('Uploaded on', default = datetime.now())
 
+    def __str__(self):
+        return self.name

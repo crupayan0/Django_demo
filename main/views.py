@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Song
 
 # Create your views here.
 def homepage(request):
-    return HttpResponse('<p>Hi There! Welcome to <strong>Django</strong></p>')
+    return render(request,
+                  'main/home.html',
+                  {'songs': Song.objects.all})
+
